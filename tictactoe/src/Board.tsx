@@ -89,19 +89,19 @@ export default function Board() {
 	}
 
 	function handleClick(index: number) {
-		console.log(boardArr)
-		if (boardArr[index] === '' && times % 2 === 0) {
-			let newArr = [...boardArr]
-			newArr[index] = 'X'
-			setBoardArr(newArr) //!
-		} else if (boardArr[index] === '' && times % 2 === 1) {
-			let newArr2 = [...boardArr]
-			newArr2[index] = 'O'
-			setBoardArr(newArr2) //!
-		}
-		console.log(boardArr)
+		if (boardArr[index] === '') {
+			let newArr: ['' | 'X' | 'O'] = [...boardArr]
 
-		setTimes(times => ++times)
+			if (times % 2 === 0) {
+				newArr[index] = 'X'
+				setBoardArr(newArr)
+			}
+			if (times % 2 === 1) {
+				newArr[index] = 'O'
+				setBoardArr(newArr)
+			}
+			setTimes(times => ++times)
+		}
 	}
 
 	return (

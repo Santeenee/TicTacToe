@@ -1,4 +1,4 @@
-import './css/App.css'
+import './index.css'
 import Board from './Board'
 
 function App() {
