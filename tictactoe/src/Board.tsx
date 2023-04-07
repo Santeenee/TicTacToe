@@ -10,7 +10,7 @@ export default function Board() {
 	//every time the board updates, check the winner
 	useMemo(() => {
 		if (times > 4) {
-			let winner = checkWinner()
+			let winner: any = checkWinner() //!
 			console.log(winner)
 			if (winner != undefined) {
 				printWinner(winner)
@@ -50,14 +50,14 @@ export default function Board() {
 		}, 3000)
 	}
 
-	function checkWinner(): 'PlayerX' | 'PlayerO' | 'Tie' | undefined {
+	function checkWinner() {
 		let b = [...boardArr]
 		console.log(b)
 
 		//check horizontal
 		for (let h = 2; h < 8; h += 3) {
 			if (b[h] !== '' && b[h] === b[h - 1] && b[h - 1] === b[h - 2]) {
-				return `Player ${b[h]}`
+				return `Player${b[h]}`
 			}
 		}
 
