@@ -65,7 +65,7 @@ button:focus-visible {
 	body {
 		background-color: white;
 	}
-	.board {
+	div.board {
 		background-color: #1a1a1a;
 	}
 	a:hover {
