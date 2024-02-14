@@ -24,7 +24,7 @@ export default function Board() {
   }
 
   function printWinner(x: "PlayerX" | "PlayerO" | "Tie") {
-    //create a <div>
+    
     const winnerPopup = document.createElement("div");
 
     if (x === "Tie") winnerPopup.innerHTML = `<p>It's a ${x}!</p>`;
@@ -49,7 +49,7 @@ export default function Board() {
     }, 3000);
   }
 
-  function checkWinner() {
+  function checkWinner(): "PlayerX" | "PlayerO" | "Tie" | undefined {
     const board = boardArr;
     console.log(board);
 
@@ -57,14 +57,14 @@ export default function Board() {
     //check horizontal
     for (let h = 2; h < 8; h += 3) {
       if (board[h] !== "" && board[h] === board[h - 1] && board[h - 1] === board[h - 2]) {
-        return `Player${board[h]}`;
+        return `Player${board[h]||'X'}`;
       }
     }
 
     //check vertical
     for (let v = 0; v < 3; v++) {
       if (board[v] !== "" && board[v] === board[v + 3] && board[v + 3] === board[v + 6]) {
-        return `Player${board[v]}`;
+        return `Player${board[v]||'X'}`;
       }
     }
 
@@ -86,7 +86,7 @@ export default function Board() {
     }
 
     //no winner, no tie, the game goes on
-    return;
+    // return;
   }
 
   function handleClick(index: number) {
