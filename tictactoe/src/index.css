@@ -1,114 +1,117 @@
 :root {
-	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-	line-height: 1.5;
-	font-weight: 400;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
 
-	color-scheme: light dark;
-	color: rgba(255, 255, 255, 0.87);
-	background-color: #242424;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
 
-	font-synthesis: none;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	-webkit-text-size-adjust: 100%;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 
 a {
-	font-weight: 500;
-	color: #646cff;
-	text-decoration: inherit;
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
 }
 a:hover {
-	color: #535bf2;
+  color: #535bf2;
 }
 
 body {
-	margin: 0;
-	display: flex;
-	place-items: center;
-	min-width: 320px;
-	min-height: 100vh;
+  margin: 0;
+  display: flex;
+  place-items: center;
+  place-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: 100svh;
 }
 
 h1 {
-	font-size: 3.2em;
-	line-height: 1.1;
+  font-size: 3.2em;
+  line-height: 1.1;
 }
 
 button {
-	border-radius: 8px;
-	border: 1px solid transparent;
-	/* padding: 0.6em 1.2em; */
-	font-size: 1em;
-	font-weight: 500;
-	font-family: inherit;
-	background-color: #242424;
-	cursor: pointer;
-	transition: border-color 0.25s;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  /* padding: 0.6em 1.2em; */
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #242424;
+  cursor: pointer;
+  transition: border-color 0.25s;
 }
 button:focus-visible {
-	outline: 4px auto -webkit-focus-ring-color;
+  outline: none;
+  box-shadow: inset 0 0 0 2px hsl(20, 100%, 40%);
 }
 
-.cell img[src$='.svg'] {
-	filter: invert(1);
-	width: 70%;
-	display: block;
+.cell img[src$=".svg"] {
+  filter: invert(1);
+  width: 70%;
+  display: block;
 }
 
 @media (prefers-color-scheme: light) {
-	:root {
-		color: #213547;
-		background-color: white;
-	}
-	body {
-		background-color: white;
-	}
-	div.board {
-		background-color: #1a1a1a;
-	}
-	a:hover {
-		color: #747bff;
-	}
-	button {
-		background-color: white;
-	}
-	.cell img[src$='.svg'] {
-		filter: invert(0);
-	}
-	p {
-		color: black;
-	}
+  :root {
+    color: #213547;
+    background-color: white;
+  }
+  body {
+    background-color: white;
+  }
+  div.board {
+    background-color: #1a1a1a;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: white;
+  }
+  .cell img[src$=".svg"] {
+    filter: invert(0);
+  }
+  p {
+    color: black;
+  }
 }
 
 #root {
-	max-width: 1280px;
-	margin: 0 auto;
-	padding: 2rem;
-	text-align: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
 }
 
 .board {
-	display: flex;
-	flex-flow: row wrap;
-	justify-content: center;
-	align-items: center;
-	gap: 0.5rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 
-	width: calc(300px + 1rem);
+  width: calc(300px + 1rem);
 
-	background-color: white;
+  background-color: white;
 }
 
 .cell {
-	width: 100px;
-	height: 100px;
-	border-radius: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 0;
 
-	/* center X.svg and O.svg */
-	display: grid;
-	place-items: center;
+  /* center X.svg and O.svg */
+  display: grid;
+  place-items: center;
 }
 
 /* @media (prefers-reduced-motion: no-preference) {
@@ -120,7 +123,10 @@ button:focus-visible {
 }*/
 
 .winner-popup {
-	font-size: 2rem;
-	color: white;
-	text-decoration: underline;
+  font-size: 2rem;
+  color: white;
+  /* text-decoration: underline; */
+  text-align: center;
+  position: fixed;
+  inset: auto 0 2rem 0;
 }
